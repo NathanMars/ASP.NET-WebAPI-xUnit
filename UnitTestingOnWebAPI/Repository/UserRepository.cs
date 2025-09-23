@@ -13,13 +13,13 @@ namespace API.Repository
             return result > 0;
         }
 
-        public async Task<User> GetByIdAsync(int id) => await context!.Users!.FirstOrDefaultAsync(_ => _.Id == id);
+        public async Task<User> GetByIdAsync(int id) => await context!.Users!.FirstOrDefaultAsync(user => user.Id == id);
 
         public async Task<IEnumerable<User>> GetAllAsync() => await context!.Users.ToListAsync();
 
         public async Task<bool> UpdateAsync(User user)
         {
-            var getUser = await context!.Users.FirstOrDefaultAsync(_ => _.Id == user.Id);
+            var getUser = await context!.Users.FirstOrDefaultAsync(user => user.Id == user.Id);
             if (getUser != null)
             {
                 getUser.Name = user.Name;
@@ -32,7 +32,7 @@ namespace API.Repository
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var getUser = await context.Users.FirstOrDefaultAsync(_ => _.Id == id);
+            var getUser = await context.Users.FirstOrDefaultAsync(user => user.Id == id);
             if (getUser != null)
             {
                 context.Users.Remove(getUser);

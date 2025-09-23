@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<UserDbContext> (options => options.UseSqlite("Data Source = UnitTestDb.db"));
+builder.Services.AddDbContext<UserDbContext> (options => options.UseSqlite("Data Source=UnitTestDb.db"));
 
 var app = builder.Build();
 

@@ -1,4 +1,5 @@
 using API.Data;
+using API.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<UserDbContext> (options => options.UseSqlite("Data Source=UnitTestDb.db"));
+builder.Services.AddScoped<IUserInterface, UserRepository>();
 
 var app = builder.Build();
 

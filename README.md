@@ -1,2 +1,2 @@
 # ASP.NET-WebAPI-xUnit
-Demonstração do uso de xUnit em soluções ASP.NET
+Uma demonstração do uso de xUnit para testes unitários em soluções ASP.NET, neste caso uma REST API. A demonstração foi desenvolvida seguindo os principios de SOLID Design e Clean Code, e o repositório segue o padrão de Conventional Commits. O projeto demonstra a criação de testes unitários utilizando tanto Moq como NSubistitute para mocking e stubbing, e como realizar Asserts com e sem FluentAssertions.
